@@ -22,7 +22,7 @@ void RingPush(RingBuffer *_buff, uint8_t val)
     *(_buff->currentWriteAddr) = val;
     if(_buff->currentWriteAddr == _buff->endAddr) _buff->currentWriteAddr = _buff->startAddr;
     else _buff->currentWriteAddr += sizeof(uint8_t);
-    loc++;
+    ++loc;
 }
 uint8_t RingPull(RingBuffer *_buff)
 {

