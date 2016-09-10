@@ -1,4 +1,4 @@
-# Small Scripts and Projects
+# Small Scripts and Projects (Use at YOUR OWN RISK!!!)
 
 #### mosfet_f_calc.py
 Calculates MOSFET frequency
