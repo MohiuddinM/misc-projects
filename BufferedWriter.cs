@@ -42,7 +42,7 @@ namespace BufferedWriter
                 Writer.Flush();
                 Writer.Dispose();
             }
-            catch { }
+            catch { /* Already disposed, do nothing */ }
 
             
             WriterThread.Abort();
