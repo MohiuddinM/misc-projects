@@ -9,6 +9,9 @@ Script to verify large number of email addresses
 #### rootkit.c			
 Linux kernel module which owns a process and prevents it from being killed
 
+#### dynamic_array.c			
+Generic Dynamic array implementation in C, arbitrary type data
+
 #### Optimze C code.pdf		
 Document is Publically available on Internet (Useful tips to optimize C code)
 
